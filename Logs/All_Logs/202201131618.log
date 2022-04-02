@@ -1,0 +1,3 @@
+2022-01-13 16:18:20,033 - selenium - INFO - 读取浏览器配置
+2022-01-13 16:18:20,035 - selenium - INFO - 读取url：https://www.baidu.com
+2022-01-13 16:18:20,037 - selenium - ERROR - 浏览器打开报错
