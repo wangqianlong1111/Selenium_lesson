@@ -1358,15 +1358,23 @@ dog.run()
 cat = Cat()
 cat.run()
 
-'''
+
 class Student(object):
     def __init__(self, name):
         self.name = name
 s = Student('Bob')
 s.score = 90
+'''
+class Person:
+    def __init__(self, fname, lname):
+        self.firstname = fname
+        self.lastname = lname
 
+    def printname(self):
+        print(self.firstname, self.lastname)
 
-
+x = Person("Bill", "Gates")
+x.printname()
 
 
 
