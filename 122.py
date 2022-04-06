@@ -1386,7 +1386,20 @@ class Student(Person):
 x = Student("Elon", "Musk", 2019)
 x.welcome()
 '''
-#
+# 迭代器
+mytuple = ('apple', 'banana', 'cherry')
+myit = iter(mytuple)
+print(next(myit))
+print(next(myit))
+print(next(myit))
+mystr = "banana"
+myit = iter(mystr)
+print(next(myit))
+print(next(myit))
+print(next(myit))
+print(next(myit))
+print(next(myit))
+print(next(myit))
 
 
 
