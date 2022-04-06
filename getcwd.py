@@ -4,3 +4,5 @@ def get_cwd():
     # 当前文件的绝对路径
     return path
 wusd
+asdxxc
+xcvxcv
