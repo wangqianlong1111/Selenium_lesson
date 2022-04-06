@@ -1364,7 +1364,7 @@ class Student(object):
         self.name = name
 s = Student('Bob')
 s.score = 90
-'''
+
 # 继承--创建父类
 class Person:
     def __init__(self, fname, lname):
@@ -1379,9 +1379,14 @@ class Student(Person):
         super().__init__(fname, lname)
         self.graduationyear = year
 
-x = Student("Elon", "Musk", 2019)
-print(x.graduationyear)
+    def welcome(self):
+        print("Welcome", self.firstname, self.lastname,
+              "to the class of", self.graduationyear)
 
+x = Student("Elon", "Musk", 2019)
+x.welcome()
+'''
+#
 
 
 
