@@ -1385,7 +1385,7 @@ class Student(Person):
 
 x = Student("Elon", "Musk", 2019)
 x.welcome()
-'''
+
 # 迭代器
 mytuple = ('apple', 'banana', 'cherry')
 myit = iter(mytuple)
@@ -1400,12 +1400,49 @@ print(next(myit))
 print(next(myit))
 print(next(myit))
 print(next(myit))
+# 迭代元组的值
+mytuple = ("apple", "banana", "cherry")
+for x in mytuple:
+    print(x)
+# 迭代字符串中的字符
+mystr = "banana"
 
+for x in mystr:
+    print(x)
 
-
-
-
-
+# 创建迭代器
+class MyNumbers:
+    def __iter__(self):
+        self.a = 1
+        return self
+    def __next__(self):
+        x = self.a
+        self.a += 1
+        return x
+myclass = MyNumbers()
+myiter = iter(myclass)
+print(next(myiter))
+print(next(myiter))
+print(next(myiter))
+print(next(myiter))
+print(next(myiter))
+'''
+# 为了防止迭代永远进行，我们可以使用 StopIteration语句
+class MyNumbers:
+    def __iter__(self):
+        self.a = 1
+        return self
+    def __next__(self):
+        if self.a <= 20:
+            x = self.a
+            self.a += 1
+            return x
+        else:
+            raise StopIteration
+myclass = MyNumbers()
+myiter = iter(myclass)
+for x in myiter:
+    print(x)
 
 
 
