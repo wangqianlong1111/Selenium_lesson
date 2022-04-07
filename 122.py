@@ -1426,7 +1426,7 @@ print(next(myiter))
 print(next(myiter))
 print(next(myiter))
 print(next(myiter))
-'''
+
 # 为了防止迭代永远进行，我们可以使用 StopIteration语句
 class MyNumbers:
     def __iter__(self):
@@ -1444,14 +1444,58 @@ myiter = iter(myclass)
 for x in myiter:
     print(x)
 
+# 作用域--局部作用域
+# 在函数内部创建的变量属于该函数的局部作用域，
+# 并且只能在该函数内部使用。
+def myfunc():
+    x = 100
+    print(x)
+myfunc()
+
+def myfunc():
+    x = 100
+    def myinnerfunc():
+        print(x)
+    myinnerfunc()
+myfunc()
+
+# 全局作用域
+x = 100
+def myfunc():
+    print(x)
+myfunc()
+print(x)
+# 命名变量
+x = 100
+def myfunc():
+    x = 200
+    print(x)
+myfunc()
+print(x)
+
+# Global 关键字
+x = 100
+def myfunc():
+    global x
+    x = 200
+myfunc()
+print(x)
+'''
+'a test module'
+__author__ = 'Michael Liao'
+import sys
+def test():
+    args = sys.argv
+    if len(args) == 1:
+        print("hello world")
+    elif len(args) == 2:
+        print('Hello, %s!' % args[1])
+    else:
+        print('Too many arguments!')
 
 
-
-
-
-
-
-
+if __name__ == '__main__':
+    test()
 
 
 
