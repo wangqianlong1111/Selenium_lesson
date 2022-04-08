@@ -1480,7 +1480,7 @@ def myfunc():
     x = 200
 myfunc()
 print(x)
-'''
+
 'a test module'
 __author__ = 'Michael Liao'
 import sys
@@ -1497,9 +1497,35 @@ def test():
 if __name__ == '__main__':
     test()
 
+# 返回函数
+def calc_sum(*args):
+    ax = 0
+    for n in args:
+        ax = ax + n
+    return
 
+def lazy_sum(*args):
+    def sum():
+        ax = 0
+        for n in args:
+            ax = ax + n
+        return ax
+    return sum
+print(lazy_sum(1, 3, 5, 7, 9))
+'''
+# 导入日期模块--显示当前时间
 
+import datetime
+x = datetime.datetime.now()
+print(x)
+import datetime
+x = datetime.datetime.now()
+print(x.year)
+print(x.strftime("%A"))
 
+import datetime
+x = datetime.datetime(2022, 4, 8)
+print(x)
 
 
 
