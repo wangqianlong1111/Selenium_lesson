@@ -1512,7 +1512,7 @@ def lazy_sum(*args):
         return ax
     return sum
 print(lazy_sum(1, 3, 5, 7, 9))
-'''
+
 # 导入日期模块--显示当前时间
 
 import datetime
@@ -1526,9 +1526,195 @@ print(x.strftime("%A"))
 import datetime
 x = datetime.datetime(2022, 4, 8)
 print(x)
+x =datetime.datetime(2019, 10, 1)
+print(x.strftime("%B"))
 
+# JSON
+import json
+x ='{"name":"Bill", "age":63, "city":"Seatle"}'
+y = json.loads(x)
+print(y['age'])
 
+import json
+x = {"name": "bill", "age": "21", "city": "seatle"}
+y = json.dumps(x)
+print(y)
 
+import json
+print(json.dumps({"name": "bill", "age": "21"}))
+print(json.dumps(["apple", "bananas"]))
+print(json.dumps(("apple", "bananas")))
+print(json.dumps("hello"))
+print(json.dumps(42))
+print(json.dumps(31.76))
+print(json.dumps(True))
+print(json.dumps(False))
+print(json.dumps(None))
+
+import mysql.connector
+mydb = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="123456"
+)
+mycursor = mydb.cursor()
+# 检查数据库是否次存在
+mycursor.execute("SHOW DATABASES")
+for x in mycursor:
+    print(x)
+# 创建数据库
+# mycursor.execute("CREATE DATABASE mydatabase")
+
+import mysql.connector
+mydb = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="123456",
+    database="mydatabase"
+)
+mycursor = mydb.cursor()
+mycursor.execute("SHOW TABLES")
+for x in mycursor:
+    print(x)
+# 创建表
+# mycursor.execute("CREATE TABLE customers(name VARCHAR(255), address VARCHAR(255))")
+
+# 廖雪峰-图形界面教程
+from tkinter import *
+
+class Application(Frame):
+    def __init__(self, master=None):
+        Frame.__init__(self, master)
+        self.pack()
+        self.createWidgets()
+
+    def createWidgets(self):
+        self.helloLabel = Label(self, text='Hello, world')
+        self.helloLabel.pack()
+        self.quitButton = Button(self, text='Quit', command=self.quit)
+        self.quitButton.pack()
+
+app = Application()
+app.master.title('Hello World')
+app.mainloop()
+
+# 输入文字
+from tkinter import *
+import tkinter.messagebox as messagebox
+
+class Application(Frame):
+    def __init__(self, master=None):
+        Frame.__init__(self, master)
+        self.pack()
+        self.createWidgets()
+
+    def createWidgets(self):
+        self.nameInput = Entry(self)
+        self.nameInput.pack()
+        self.alertButton = Button(self, text='Hello', command=self.hello)
+        self.alertButton.pack()
+
+    def hello(self):
+        name = self.nameInput.get() or 'world'
+        messagebox.showinfo('Message', 'Hello, %s' % name)
+app = Application()
+app.master.title('Hello World')
+app.mainloop()
+
+# 海龟绘图
+from turtle import *
+# 设置笔刷宽度
+width(10)
+# 前进
+forward(200)
+# 旋转90°
+right(90)
+# 笔刷颜色
+pencolor('yellow')
+forward(100)
+right(90)
+
+pencolor('yellow')
+forward(200)
+right(90)
+
+pencolor('blue')
+forward(100)
+right(90)
+
+done()
+
+# 五角星
+from turtle import *
+
+def drawStar(x, y):
+    pu()
+    goto(x, y)
+    pd()
+
+    seth(0)
+    for i in range(5):
+        fd(40)
+        rt(144)
+
+for x in range(0, 250, 50):
+    drawStar(x, 0)
+
+done()
+
+# 树
+from turtle import *
+colormode(255)
+
+lt(90)
+
+lv = 14
+l = 120
+s = 45
+
+width(lv)
+
+r = 0
+g = 0
+b = 0
+pencolor(r, g, b)
+
+penup()
+bk(1)
+pendown()
+fd(1)
+
+def draw_tree(l, level):
+    global r, g, b
+    w = width()
+
+    width(w * 3.0 / 4.0)
+
+    r = r + 1
+    g = g + 2
+    b = b + 3
+    pencolor(r % 200, g % 200, b % 200)
+
+    l = 3.0 / 4.0 * l
+    lt(s)
+    fd(l)
+
+    if level < lv:
+        draw_tree(l, level + 1)
+    bk(l)
+    rt(2 *s)
+    fd(l)
+
+    if level < lv:
+        draw_tree(l, level + 1)
+    bk(l)
+    lt(s)
+
+    width(w)
+speed("fastest")
+draw_tree(l, 4)
+done()
+'''
 
 
 
