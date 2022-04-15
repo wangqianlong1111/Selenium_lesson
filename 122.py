@@ -1715,6 +1715,24 @@ speed("fastest")
 draw_tree(l, 4)
 done()
 '''
+# requests 框架
+# coding:utf-8
+# 导包
+import requests
+# 发送GET请求
+url = 'http://localhost:8082/account/login'
+data = {
+    'username': 'admin',
+    'password': 'admin',
+    'userType': '1'
+}
+res = requests.post(url=url, data=data)
+print(res)
+print(res.text)
+
+
+
+
 
 
 
